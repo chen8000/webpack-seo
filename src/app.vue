@@ -1,20 +1,19 @@
 <!--
  * @Date: 2020-07-19 01:26:56
  * @LastEditors: chenzhanghui
- * @LastEditTime: 2020-07-19 02:19:49
+ * @LastEditTime: 2020-07-24 14:57:03
 --> 
 <template>
   <div>
-    牛逼不
-    <Test/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import Test from './views/test.vue'
+  // import Test from './views/test.vue'
   export default {
     components: {
-      Test
+      // Test
     }
   }
 </script>

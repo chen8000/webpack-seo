@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-07-16 18:47:40
  * @LastEditors: chenzhanghui
- * @LastEditTime: 2020-07-19 02:21:55
+ * @LastEditTime: 2020-07-24 15:22:24
  */ 
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
@@ -29,8 +29,13 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(), // 模块热替换
     new HtmlWebpackPlugin({
       template: './public/index.html'
-    })
+    }),
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    }
+  },
   module: {
     rules: [
       ...rules
