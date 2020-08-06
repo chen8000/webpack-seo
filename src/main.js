@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-07-16 18:46:56
  * @LastEditors: chenzhanghui
- * @LastEditTime: 2020-07-24 15:19:49
+ * @LastEditTime: 2020-08-06 12:14:19
  */ 
 import Vue from 'vue'
 import App from './app.vue'
@@ -11,6 +11,6 @@ new Vue({
   render: h => h(App),
   router,
   mounted() {
-    document.dispatchEvent(new Event('render-event'));
+    document.dispatchEvent(new Event('custom-render-trigger'))
   }
 }).$mount('#app')

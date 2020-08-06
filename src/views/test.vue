@@ -1,7 +1,7 @@
 <!--
  * @Date: 2020-07-19 01:58:30
  * @LastEditors: chenzhanghui
- * @LastEditTime: 2020-07-24 15:11:17
+ * @LastEditTime: 2020-08-06 12:15:44
 --> 
 <template>
   <div>
@@ -20,6 +20,8 @@
   }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="css" scoped>
+  div{
+    color: red;
+  }
 </style>
