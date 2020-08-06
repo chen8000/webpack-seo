@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-07-19 02:05:43
  * @LastEditors: chenzhanghui
- * @LastEditTime: 2020-07-19 02:07:23
+ * @LastEditTime: 2020-08-06 15:11:07
  */ 
 module.exports = [
   {
@@ -15,6 +15,14 @@ module.exports = [
     use: [
       'style-loader',
       'css-loader'
+    ]
+  },
+  {
+    test: /\.scss$/,
+    use: [
+      'style-loader',
+      'css-loader',
+      'sass-loader'
     ]
   },
   {
