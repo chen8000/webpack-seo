@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-07-16 18:47:40
  * @LastEditors: chenzhanghui
- * @LastEditTime: 2020-08-06 12:13:43
+ * @LastEditTime: 2020-08-07 14:55:40
  */ 
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
@@ -17,7 +17,8 @@ module.exports = {
   entry: './src/main.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '../'
   },
   devtool: 'inline-source-map', // 方便调试，
   devServer: {
@@ -27,8 +28,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(), // 每次编译都清除dist目录
     new VueLoaderPlugin(), // vue-loader 依赖插件
-    new webpack.NamedModulesPlugin(), // 模块热替换
-    new webpack.HotModuleReplacementPlugin(), // 模块热替换
+    // new webpack.NamedModulesPlugin(), // 模块热替换
+    // new webpack.HotModuleReplacementPlugin(), // 模块热替换
     new HtmlWebpackPlugin({
       template: './public/index.html'
     }),
@@ -39,13 +40,15 @@ module.exports = {
       routes: ['/route', '/test'],
       
       renderer: new Renderer({
-        ignoreJSErrors: true,
+        // ignoreJSErrors: true,
+        injectProperty: '__PRERENDER_INJECTED',
         inject: {
           foo: 'bar'
         },
         headless: false,
         // 在 main.js 中 document.dispatchEvent(new Event('render-event'))，两者的事件名称要对应上。
         // renderAfterDocumentEvent: 'render-event',
+        // renderAfterElementExists: 'my-app',
         renderAfterTime: 5000
       })
     })
